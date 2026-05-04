@@ -1,0 +1,73 @@
+WaveScript:
+    statements*=Statement
+;
+
+Statement:
+    TempoStatement | LetStatement | ForStatement | IfStatement | PrintStatement | EndStatement
+;
+
+TempoStatement:
+    'tempo' value=INT
+;
+
+LetStatement:
+    note=Note duration=Duration '->' 'let' name=ID '=' expr=Expression
+;
+
+PrintStatement:
+    note=Note duration=Duration '->' 'print' expr=Expression
+;
+
+IfStatement:
+    note=Note duration=Duration '->' 'if' condition=Expression
+        then_block=Block
+    (else_if_note=Note else_if_dur=Duration '->' 'else' 'if' else_if_condition=Expression
+        else_if_block=Block)*
+    (else_note=Note else_dur=Duration '->' 'else'
+        else_block=Block)?
+;
+
+ForStatement:
+    note=Note duration=Duration '->' 'for' var=ID 'in' start=INT '..' end=INT
+        block=Block
+;
+
+EndStatement:
+    note=Note duration=Duration '->' 'end'
+;
+
+Block:
+    '{' statements*=Statement '}' | statements=Statement
+;
+
+Expression:
+    left=Arithmetic (op=ComparisonOp right=Arithmetic)?
+;
+
+Arithmetic:
+    left=Term (op=ArithmeticOp right=Arithmetic)?
+;
+
+Term:
+    INT | STRING | ID | '(' Expression ')'
+;
+
+ComparisonOp:
+    '==' | '!=' | '>=' | '<=' | '>' | '<'
+;
+
+ArithmeticOp:
+    '+' | '-' | '*' | '/' | '%'
+;
+
+Note:
+    /[A-G][#b]?[0-8]/
+;
+
+Duration:
+    'w' | 'h' | 'q' | 'e' | 's'
+;
+
+Comment:
+    /\/\/.*$/
+;
