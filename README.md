@@ -58,8 +58,8 @@ macOS (with homebrew)
 brew install lilypond
 ```
 
-Windows
-download and install from [Here]((https://lilypond.org/download.html))
+Windows  
+download and install from [Here](https://lilypond.org/download.html)
 
 Linux (Ubuntu)
 ```bash
