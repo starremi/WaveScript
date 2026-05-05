@@ -83,5 +83,91 @@ python main.py examples/[fileName].wave
 ```
 Be sure that any program you want to run is in a .wave file in the examples directory of WaveScript. 
 
-  
+## TextX Grammar Overview
+
+WaveScript is defined using a TextX grammar (`grammar/wavescript.tx`) that describes the structure of valid programs. The grammar gives the language its “music-shaped” syntax, where each statement combines a note, a duration, and an instruction.
+
+### Core Structure
+
+A WaveScript program consists of a sequence of statements:
+
+- tempo declarations
+- note-based instructions
+- control flow (loops and conditionals)
+- program termination
+
+Each statement follows a consistent pattern, making the language predictable and easy to parse.
+
+---
+
+### Musical Statements
+
+The fundamental building block of the language is the **note instruction**:
+
+```wavescript
+C4 q -> print "Hello"
+```
+This statement includes:
+- a pitch (e.g., C4, E4, G4)
+- a duration (e.g., q for quarter, h for half, e for eigth)
+- an action (print, let, if, for, end, etc)
+
+These statements are interpreted in two ways
+- logical instructions (e.g., printing text)
+- sound events (e.g., note + duration = audio)
+
+### Tempo Declaration
+Programs begin with a tempo setting:
+```wavescript
+tempo 120
+```
+This defines how durations map to real time in seconds and affect audio playback.
+
+### Variables
+Variables are introduced using a musical trigger:
+```wavescript
+A3 q -> let
+x = 10
+```
+This allows WaveScript to store and reuse values such as numbers or strings.
+
+### Control Flow
+WaveScript supports basic control structures using musical syntax.
+
+#### Loops
+
+```wavescript
+D4 q -> for
+i in 1..4
+C4 q -> print "Looping"
+G4 h -> end
+```
+
+#### Conditionals
+
+```wavescript
+E4 q -> if
+x > 5
+C4 q -> print "Big"
+F4 q -> else
+C4 q -> print "Small"
+G4 h -> end
+```
+These behave like regular programming logic but are triggers by note based statements.
+
+### Program Termination
+Programs end with:
+```wavescript
+G4 h -> end
+```
+This marks the end of a control structure or the entire program.
+
+### Dual Interpretation
+A key feature of the grammar is dual interpretation:
+- logical meaning: executes code (prints, loops, conditions)
+- sonic meaning: generates timed sound events based on notes and durations
+```wavescript
+C4 q -> print "Hello"
+```
+This prints "Hello" to the console and produces a sound event (C4, quarter note).
 
