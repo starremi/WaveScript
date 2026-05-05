@@ -1,0 +1,7 @@
+tempo 120
+pattern motif = [C4 q, E4 q, G4 h]
+
+D4 q -> for
+i in 1..2
+play motif
+G4 h -> end
