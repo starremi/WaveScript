@@ -1,0 +1,11 @@
+tempo 120
+
+A3 q -> let
+x = 7
+
+E4 q -> if
+x > 5
+C4 q -> print "Value is big"
+F4 q -> else
+C4 q -> print "Value is small"
+G4 h -> end
