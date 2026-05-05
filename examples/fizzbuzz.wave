@@ -1,6 +1,6 @@
 tempo 140
 
-D4 q -> for i in 1..15
+D4 q -> for i in 1..100
     E4 e -> if i % 15 == 0
         C5 s -> print "FizzBuzz"
     F4 e -> else if i % 3 == 0
