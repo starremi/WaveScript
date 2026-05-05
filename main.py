@@ -24,9 +24,10 @@ def main():
     interpreter = WaveScriptInterpreter()
     events = interpreter.interpret(model)
 
-    print("\nGenerated Events:")
-    for e in events:
-        print(e)
+# debug taken out for final submission
+    #print("\nGenerated Events:")
+    #for e in events:
+        #print(e)
 
     # Backend outputs
     audio_buffer = generate_audio(events, "outputs/audio.wav")
