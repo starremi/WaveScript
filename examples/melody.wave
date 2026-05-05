@@ -1,6 +1,7 @@
 tempo 120
-pattern intro = [C4 q, E4 q, G4 h]
-play intro
-let audio = sonify(intro)
-show waveform audio
-show spectrogram audio
+C4 q -> print "C"
+D4 q -> print "D"
+E4 q -> print "E"
+F4 q -> print "F"
+G4 h -> print "G"
+C5 h -> end

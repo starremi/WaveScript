@@ -1,6 +1,11 @@
 tempo 120
-pattern scale = [C4 q, D4 q, E4 q, F4 q, G4 h]
-play scale
-let audio = sonify(scale)
-show waveform audio
-export score "scale.ly"
+C4 q -> print "Starting scale"
+C4 q -> print "C4"
+D4 q -> print "D4"
+E4 q -> print "E4"
+F4 q -> print "F4"
+G4 q -> print "G4"
+A4 q -> print "A4"
+B4 q -> print "B4"
+C5 h -> print "C5"
+G4 h -> end

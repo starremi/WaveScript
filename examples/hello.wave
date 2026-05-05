@@ -1,4 +1,4 @@
 tempo 120
-C4 q -> print
-melody "Hello"
+C4 q -> print "Hello, WaveScript!"
+E4 q -> print "This program prints text and creates sound events."
 G4 h -> end

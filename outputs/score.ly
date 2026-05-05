@@ -1,7 +1,8 @@
 \version "2.24.0"
 \score {
   \new Staff {
-    c'4 e'4 g'2
+    \tempo 4 = 140
+    e'4 e'4 f'4 g'4 g'4 f'4 e'4 d'4 c'4 c'4 d'4 e'4 e'4 d'4 e'4 e'4 f'4 g'4 g'4 f'4 e'4 d'4 c'4 c'4 d'4 e'4 d'4 c'4 d'4 d'4 e'4 c'4 d'4 e'8 f'8 e'4 c'4 d'4 e'8 f'8 e'4 d'4 c'4 d'4 g4 e'4 e'4 f'4 g'4 g'4 f'4 e'4 d'4 c'4 c'4 d'4 e'4 d'4 c'4 c'4
   }
   \layout { }
   \midi { }

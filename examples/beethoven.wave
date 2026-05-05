@@ -1,48 +1,65 @@
 tempo 120
 
-pattern beethoven = [
-E4 q, E4 q, F4 q, G4 q,
-G4 q, F4 q, E4 q, D4 q,
-C4 q, C4 q, D4 q, E4 q,
-E4 h, D4 h,
+E4 q -> print "Ode to Joy begins"
+E4 q -> print "E"
+F4 q -> print "F"
+G4 q -> print "G"
+G4 q -> print "G"
+F4 q -> print "F"
+E4 q -> print "E"
+D4 q -> print "D"
+C4 q -> print "C"
+C4 q -> print "C"
+D4 q -> print "D"
+E4 q -> print "E"
+E4 h -> print "E held"
+D4 h -> print "D held"
 
-E4 q, E4 q, F4 q, G4 q,
-G4 q, F4 q, E4 q, D4 q,
-C4 q, C4 q, D4 q, E4 q,
-D4 h, C4 h,
+E4 q -> print "Phrase repeats"
+E4 q -> print "E"
+F4 q -> print "F"
+G4 q -> print "G"
+G4 q -> print "G"
+F4 q -> print "F"
+E4 q -> print "E"
+D4 q -> print "D"
+C4 q -> print "C"
+C4 q -> print "C"
+D4 q -> print "D"
+E4 q -> print "E"
+D4 h -> print "D held"
+C4 h -> print "C held"
 
-D4 q, D4 q, E4 q, C4 q,
-D4 q, E4 e, F4 e, E4 q, C4 q,
-D4 q, E4 e, F4 e, E4 q, D4 q,
-C4 q, D4 q, G3 h,
+D4 q -> print "Middle section"
+D4 q -> print "D"
+E4 q -> print "E"
+C4 q -> print "C"
+D4 q -> print "D"
+E4 e -> print "E short"
+F4 e -> print "F short"
+E4 q -> print "E"
+C4 q -> print "C"
+D4 q -> print "D"
+E4 e -> print "E short"
+F4 e -> print "F short"
+E4 q -> print "E"
+D4 q -> print "D"
+C4 q -> print "C"
+D4 q -> print "D"
+G3 h -> print "G held"
 
-E4 q, E4 q, F4 q, G4 q,
-G4 q, F4 q, E4 q, D4 q,
-C4 q, C4 q, D4 q, E4 q,
-D4 h, C4 h,
-
-E4 q, E4 q, F4 q, G4 q,
-G4 q, F4 q, E4 q, D4 q,
-C4 q, C4 q, D4 q, E4 q,
-E4 h, D4 h,
-
-D4 q, D4 q, E4 q, C4 q,
-D4 q, E4 e, F4 e, E4 q, C4 q,
-D4 q, E4 e, F4 e, E4 q, D4 q,
-C4 q, D4 q, G3 h,
-
-E4 q, F4 q, G4 q, E4 q,
-F4 q, G4 q, A4 q, G4 q,
-F4 q, E4 q, D4 q, C4 q,
-D4 h, G3 h,
-
-E4 q, E4 q, F4 q, G4 q,
-G4 q, F4 q, E4 q, D4 q,
-C4 q, C4 q, D4 q, E4 q,
-D4 h, C4 h
-]
-
-play beethoven
-let audio = sonify(beethoven)
-show waveform audio
-export score "beethoven.ly"
+E4 q -> print "Return theme"
+E4 q -> print "E"
+F4 q -> print "F"
+G4 q -> print "G"
+G4 q -> print "G"
+F4 q -> print "F"
+E4 q -> print "E"
+D4 q -> print "D"
+C4 q -> print "C"
+C4 q -> print "C"
+D4 q -> print "D"
+E4 q -> print "E"
+D4 h -> print "D held"
+C4 q -> print "C"
+C4 q -> print "C"

@@ -1,36 +1,38 @@
+import sys
 from textx import metamodel_from_file
 from interpreter.interpreter import WaveScriptInterpreter
-import json
+import subprocess
+from backends.audio import generate_audio
+from backends.visualizer import save_waveform
+from backends.lilypond import export_lilypond
+
 
 def main():
-    # 1. Load the grammar and create a metamodel
-    # This points to your .tx file in the grammar folder
-    mm = metamodel_from_file('grammar/wavescript.tx')
-
-    # 2. Read your FizzBuzz sample program
-    # Assuming the file is in the examples folder
-    try:
-        with open('examples/fizzbuzz.wave', 'r') as f:
-            program_code = f.read()
-    except FileNotFoundError:
-        print("Error: fizzbuzz.wave not found in examples/ folder.")
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <file.wave>")
         return
 
-    # 3. Parse the code into an AST (Model)
-    model = mm.model_from_str(program_code)
+    file_path = sys.argv[1]
 
-    # 4. Initialize and run Jania's Interpreter
-    # This handles variables, loops, and event generation
+    # Load grammar
+    mm = metamodel_from_file('grammar/wavescript.tx')
+
+    # Parse program
+    model = mm.model_from_file(file_path)
+
+    # Interpret
     interpreter = WaveScriptInterpreter()
     events = interpreter.interpret(model)
 
-    # 5. Print the Output
-    print("--- Execution Output ---")
-    # The print statements inside the interpreter will appear here
-    
-    print("\n--- Generated Sound Events (JSON) ---")
-    # This is the "Shared Contract" for Greta
-    print(json.dumps(events, indent=2))
+    print("\nGenerated Events:")
+    for e in events:
+        print(e)
+
+    # Backend outputs
+    audio_buffer = generate_audio(events, "outputs/audio.wav")
+    save_waveform(audio_buffer, "outputs/waveform.png")
+    export_lilypond(events, "outputs/score.ly", tempo=140)
+    subprocess.run(["lilypond", "-o", "outputs/score", "outputs/score.ly"])
 
 if __name__ == "__main__":
     main()

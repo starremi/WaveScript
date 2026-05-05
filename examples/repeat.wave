@@ -1,7 +1,7 @@
 tempo 120
-pattern motif = [C4 q, E4 q, G4 h]
-
-D4 q -> for
-i in 1..2
-play motif
+D4 q -> for i in 1..3 {
+C4 q -> print "Motif C"
+E4 q -> print "Motif E"
+G4 h -> print "Motif G"
+}
 G4 h -> end
