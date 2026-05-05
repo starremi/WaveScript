@@ -1,0 +1,37 @@
+tempo 120
+D4 q -> for
+i in 1..15
+E4 q -> if
+i % 15 == 0
+C4 q -> print
+melody "FizzBuzz"
+F4 q -> else_if
+i % 3 == 0
+C4 q -> print
+melody "Fizz"
+F4 q -> else_if
+i % 5 == 0
+C4 q -> print
+melody "Buzz"
+F4 q -> else
+C4 q -> print
+melody i
+G4 h -> endtempo 120
+D4 q -> for
+i in 1..15
+E4 q -> if
+i % 15 == 0
+C4 q -> print
+melody "FizzBuzz"
+F4 q -> else_if
+i % 3 == 0
+C4 q -> print
+melody "Fizz"
+F4 q -> else_if
+i % 5 == 0
+C4 q -> print
+melody "Buzz"
+F4 q -> else
+C4 q -> print
+melody i
+G4 h -> end
