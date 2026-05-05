@@ -1,0 +1,6 @@
+tempo 120
+pattern scale = [C4 q, D4 q, E4 q, F4 q, G4 h]
+play scale
+let audio = sonify(scale)
+show waveform audio
+export score "scale.ly"
