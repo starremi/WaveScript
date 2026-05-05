@@ -1,0 +1,6 @@
+tempo 120
+pattern intro = [C4 q, E4 q, G4 h]
+play intro
+let audio = sonify(intro)
+show waveform audio
+show spectrogram audio
