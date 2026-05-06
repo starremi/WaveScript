@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaveScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#overview">Overview</a>
+      <a href="#person-a">Person A</a>
+      <a href="#examples">Examples</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero-copy">
+        <p class="eyebrow">Programming language final project</p>
+        <h1>WaveScript</h1>
+        <p class="summary">
+          WaveScript is a small music-shaped programming language where code can
+          run like a normal program and also become sound, waveform images, and
+          sheet music.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/starremi/WaveScript.git">GitHub Source</a>
+          <a class="button secondary" href="#outline">View Outline</a>
+        </div>
+      </div>
+
+      <figure class="waveform-preview">
+        <img src="assets/waveform.png" alt="Generated WaveScript waveform">
+        <figcaption>Generated waveform output from WaveScript sound events.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section-band" id="outline">
+      <div class="section-heading">
+        <p class="eyebrow">Website outline</p>
+        <h2>Simple Site Structure</h2>
+      </div>
+      <div class="outline-grid">
+        <article>
+          <span>01</span>
+          <h3>Language Purpose</h3>
+          <p>Explain how WaveScript connects source code, musical syntax, sound events, audio output, and waveform visualization.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Person A Work</h3>
+          <p>Show the completed grammar, parser, interpreter logic, variables, loops, conditionals, print behavior, and event generation.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Examples</h3>
+          <p>Include Hello World, FizzBuzz, and melody examples so visitors can see what WaveScript programs look like.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Outputs</h3>
+          <p>Display the shared event format, waveform image, optional audio sample, and the link to the GitHub repository.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-row" id="person-a">
+      <div>
+        <p class="eyebrow">Completed contribution</p>
+        <h2>Person A: Language and Interpreter</h2>
+        <p>
+          Person A work covers the path from WaveScript source code to program
+          execution and sound event generation. The interpreter produces the
+          event list that the audio, visualization, and sheet music backends use.
+        </p>
+      </div>
+      <ul class="feature-list">
+        <li>TextX grammar in <code>grammar/wavescript.tx</code></li>
+        <li>Parser support for <code>.wave</code> and <code>.ws</code> style programs</li>
+        <li>Interpreter logic for <code>let</code>, <code>if</code>, <code>else</code>, <code>for</code>, and <code>print</code></li>
+        <li>Sound event generation with pitch, frequency, start time, and duration</li>
+      </ul>
+    </section>
+
+    <section class="section-band">
+      <div class="section-heading">
+        <p class="eyebrow">Language design</p>
+        <h2>Core WaveScript Ideas</h2>
+      </div>
+      <div class="detail-grid">
+        <article>
+          <h3>Musical Syntax</h3>
+          <p>Statements combine notes, durations, arrows, and commands.</p>
+          <code> C4 q -&gt; print "Hello" </code>
+        </article>
+        <article>
+          <h3>Dual Meaning</h3>
+          <p>The same program can print output and create a timed musical phrase.</p>
+          <code>musical syntax -&gt; sound events</code>
+        </article>
+        <article>
+          <h3>Shared Event Format</h3>
+          <p>Each generated event can be passed to audio and visualization tools.</p>
+          <code>{ pitch, frequency, start, duration }</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="examples" id="examples">
+      <div class="section-heading">
+        <p class="eyebrow">Sample programs</p>
+        <h2>Example WaveScript Code</h2>
+      </div>
+      <div class="code-grid">
+        <article>
+          <h3>Hello World</h3>
+          <pre><code>tempo 120
+C4 q -&gt; print
+melody "Hello"
+G4 h -&gt; end</code></pre>
+        </article>
+        <article>
+          <h3>FizzBuzz</h3>
+          <pre><code>tempo 140
+
+D4 q -&gt; for i in 1..15
+    E4 e -&gt; if i % 15 == 0
+        C5 s -&gt; print "FizzBuzz"
+    F4 e -&gt; else if i % 3 == 0
+        A4 s -&gt; print "Fizz"
+    G4 e -&gt; else if i % 5 == 0
+        B4 s -&gt; print "Buzz"
+    C4 q -&gt; else
+        C4 q -&gt; print i
+
+G4 w -&gt; end</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-row audio-row">
+      <div>
+        <p class="eyebrow">Generated output</p>
+        <h2>From Events to Sound</h2>
+        <p>
+          WaveScript generates timed sound events first. Backends can then
+          synthesize audio, render waveform images, and export LilyPond sheet
+          music.
+        </p>
+      </div>
+      <div class="audio-panel">
+        <img src="assets/waveform.png" alt="WaveScript waveform output">
+        <audio controls src="assets/audio.wav"></audio>
+      </div>
+    </section>
+
+    <section class="links" id="links">
+      <p class="eyebrow">Submission links</p>
+      <h2>Project Links</h2>
+      <p><strong>Live Website Link:</strong> <a href="https://starremi.github.io/WaveScript/">https://starremi.github.io/WaveScript/</a></p>
+      <p><strong>Git Source Code Link:</strong> <a href="https://github.com/starremi/WaveScript.git">https://github.com/starremi/WaveScript.git</a></p>
+    </section>
+  </main>
+</body>
+</html>
