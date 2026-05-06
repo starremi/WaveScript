@@ -10,10 +10,8 @@
   <header class="site-header">
     <nav class="nav">
       <a href="#overview">Overview</a>
-      <a href="#person-a">Person A</a>
-      <a href="#team">Team</a>
+      <a href="#system-flow">System Flow</a>
       <a href="#examples">Examples</a>
-      <a href="#links">Links</a>
     </nav>
   </header>
 
@@ -42,7 +40,7 @@
     <section class="section-band" id="outline">
       <div class="section-heading">
         <p class="eyebrow">Website outline</p>
-        <h2>Simple Site Structure</h2>
+        <h2> Project Structure</h2>
       </div>
       <div class="outline-grid">
         <article>
@@ -52,7 +50,7 @@
         </article>
         <article>
           <span>02</span>
-          <h3>Person A Work</h3>
+          <h3>Language and Interpreter</h3>
           <p>Show the completed grammar, parser, interpreter logic, variables, loops, conditionals, print behavior, and event generation.</p>
         </article>
         <article>
@@ -68,58 +66,27 @@
       </div>
     </section>
 
-    <section class="content-row" id="person-a">
-      <div>
-        <p class="eyebrow">Completed contribution</p>
-        <h2>Person A: Language and Interpreter</h2>
-        <p>
-          Person A work covers the path from WaveScript source code to program
-          execution and sound event generation. The interpreter produces the
-          event list that the audio, visualization, and sheet music backends use.
-        </p>
-      </div>
-      <ul class="feature-list">
-        <li>TextX grammar in <code>grammar/wavescript.tx</code></li>
-        <li>Parser support for <code>.wave</code> and <code>.ws</code> style programs</li>
-        <li>Interpreter logic for <code>let</code>, <code>if</code>, <code>else</code>, <code>for</code>, and <code>print</code></li>
-        <li>Sound event generation with pitch, frequency, start time, and duration</li>
-      </ul>
-    </section>
+    <section class="content-row" id="system-flow">
+  <div>
+    <p class="eyebrow">System flow</p>
+    <h2>How WaveScript Becomes Sound and Sheet Music</h2>
+    <p>
+      A WaveScript program starts as a <code>.wave</code> file, passes through the
+      TextX interpreter, becomes a shared event list, and then turns into audio,
+      waveform visuals, LilyPond notation, and a final sheet music PDF.
+    </p>
+  </div>
+  <ul class="feature-list">
+    <li><code>.wave</code> source file</li>
+    <li>TextX interpreter parses and executes the program</li>
+    <li>Interpreter creates the shared event list</li>
+    <li>Events are synthesized into <code>audio.wav</code></li>
+    <li>Audio is drawn as a waveform image</li>
+    <li>Events are converted into LilyPond format <code>.ly</code></li>
+    <li>LilyPond turns the notation into a sheet music PDF</li>
+  </ul>
+</section>
 
-    <section class="section-band team-section" id="team">
-      <div class="section-heading">
-        <p class="eyebrow">Project roles</p>
-        <h2>How the Team Split the Work</h2>
-      </div>
-      <div class="roles-grid">
-        <article>
-          <h3>Person A: Language and Interpreter</h3>
-          <p>
-            Jania's part takes WaveScript source code through the TextX parser,
-            interpreter, and event generator.
-          </p>
-          <ul>
-            <li>Defines the WaveScript grammar</li>
-            <li>Parses programs into a structured model</li>
-            <li>Runs variables, conditionals, loops, functions, and print behavior</li>
-            <li>Creates sound events for the backend tools</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Person B: Audio, Visualization, and Sheet Music</h3>
-          <p>
-            Greta's part starts with the shared event list and turns it into the
-            final creative outputs.
-          </p>
-          <ul>
-            <li>Synthesizes audio files from events</li>
-            <li>Generates waveform images and optional spectrograms</li>
-            <li>Exports printable LilyPond sheet music</li>
-            <li>Supports commands like <code>show waveform audio</code> and <code>export score "output.ly"</code></li>
-          </ul>
-        </article>
-      </div>
-    </section>
 
     <section class="section-band">
       <div class="section-heading">
@@ -141,6 +108,11 @@
           <h3>Shared Event Format</h3>
           <p>Each generated event can be passed to audio and visualization tools.</p>
           <code>{ pitch, frequency, start, duration }</code>
+        </article>
+        <article>
+          <h3> Outputs : Audio, Waveform, and Sheet Music</h3>
+           <p>The backend turns WaveScript sound events into a WAV audio file, a waveform image, and a LilyPond sheet music file.</p>
+           <code>events -&gt; audio.wav, waveform.png, score.ly</code>
         </article>
       </div>
     </section>
@@ -180,7 +152,7 @@ G4 w -&gt; end</code></pre>
     <section class="content-row audio-row">
       <div>
         <p class="eyebrow">Generated output</p>
-        <h2>From Events to Sound</h2>
+        <h2>From Events to Sound to Sheet Music </h2>
         <p>
           WaveScript generates timed sound events first. Backends can then
           synthesize audio, render waveform images, and export LilyPond sheet
@@ -189,15 +161,9 @@ G4 w -&gt; end</code></pre>
       </div>
       <div class="audio-panel">
         <img src="assets/waveform.png" alt="WaveScript waveform output">
+        <img src="assets/waveform.png" alt="WaveScript sheet music output">
         <audio controls src="assets/audio.wav"></audio>
       </div>
-    </section>
-
-    <section class="links" id="links">
-      <p class="eyebrow">Submission links</p>
-      <h2>Project Links</h2>
-      <p><strong>Live Website Link:</strong> <a href="https://starremi.github.io/WaveScript/">https://starremi.github.io/WaveScript/</a></p>
-      <p><strong>Git Source Code Link:</strong> <a href="https://github.com/starremi/WaveScript.git">https://github.com/starremi/WaveScript.git</a></p>
     </section>
   </main>
 </body>
