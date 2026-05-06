@@ -11,6 +11,7 @@
     <nav class="nav">
       <a href="#overview">Overview</a>
       <a href="#person-a">Person A</a>
+      <a href="#team">Team</a>
       <a href="#examples">Examples</a>
       <a href="#links">Links</a>
     </nav>
@@ -61,8 +62,8 @@
         </article>
         <article>
           <span>04</span>
-          <h3>Outputs</h3>
-          <p>Display the shared event format, waveform image, optional audio sample, and the link to the GitHub repository.</p>
+          <h3>Backends</h3>
+          <p>Show how the event list becomes audio files, waveform images, spectrograms, and LilyPond sheet music.</p>
         </article>
       </div>
     </section>
@@ -83,6 +84,41 @@
         <li>Interpreter logic for <code>let</code>, <code>if</code>, <code>else</code>, <code>for</code>, and <code>print</code></li>
         <li>Sound event generation with pitch, frequency, start time, and duration</li>
       </ul>
+    </section>
+
+    <section class="section-band team-section" id="team">
+      <div class="section-heading">
+        <p class="eyebrow">Project roles</p>
+        <h2>How the Team Split the Work</h2>
+      </div>
+      <div class="roles-grid">
+        <article>
+          <h3>Person A: Language and Interpreter</h3>
+          <p>
+            Jania's part takes WaveScript source code through the TextX parser,
+            interpreter, and event generator.
+          </p>
+          <ul>
+            <li>Defines the WaveScript grammar</li>
+            <li>Parses programs into a structured model</li>
+            <li>Runs variables, conditionals, loops, functions, and print behavior</li>
+            <li>Creates sound events for the backend tools</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Person B: Audio, Visualization, and Sheet Music</h3>
+          <p>
+            Greta's part starts with the shared event list and turns it into the
+            final creative outputs.
+          </p>
+          <ul>
+            <li>Synthesizes audio files from events</li>
+            <li>Generates waveform images and optional spectrograms</li>
+            <li>Exports printable LilyPond sheet music</li>
+            <li>Supports commands like <code>show waveform audio</code> and <code>export score "output.ly"</code></li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="section-band">
